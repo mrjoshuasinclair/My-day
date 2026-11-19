@@ -162,9 +162,8 @@ header{display:flex;flex-direction:column;gap:8px}
     <h2 id="rulesH">House rules</h2>
     <ul class="notes">
       <li>Weekends and school holidays have no plan. They're for the kids.</li>
-      <li>Break (11:55, Tue–Thu) is off the clock. Don't fill it.</li>
-      <li>Korean book study happens at home at 9pm. On Fridays it moves to school so date night stays free.</li>
-      <li>Free choice at school (30 min, Mon–Thu) is yours: a fantasy novel, gaming YouTube and news, or CompTIA A+. Pick whatever you feel like on the day.</li>
+      <li>Korean book study happens at school: Break on Tue–Thu, 2:40 on Monday, 10:10 on Friday. Evenings are for rest.</li>
+      <li>Free choice at school (30 min, Tue–Thu) is yours: a fantasy novel, gaming YouTube and news, or CompTIA A+. Pick whatever you feel like on the day.</li>
       <li>Missed a block? Skip it, don't stack it. Consistency means doing it most days, not making up the ones you missed.</li>
       <li>Your commute already gives you about 30 minutes of walking a day. That counts.</li>
     </ul>
@@ -190,8 +189,7 @@ const evening=(fri)=>[
   B("16:55","21:00","Family time","family","Daycare pickup with your wife, then dinner, bath and bedtime."),
   ...(fri
     ? [B("21:00","23:30","Date night","us","Just the two of you.",1)]
-    : [B("21:00","21:30","Korean book study","study","At home, at the table. 30 min with your book.",1),
-       B("21:30","23:00","Ally time","game","90 min. Playing in Korean counts as bonus immersion.",1),
+    : [B("21:00","23:00","Ally or free time","game","Yours. No study tonight. Playing in Korean counts as bonus immersion.",1),
        B("23:00","23:30","Wind down","rest","Screens off, get ready for bed.")]),
 ];
 const shut=B("15:20","15:45","Book returns & shutdown","library","Check in returns, write tomorrow's top 3, catch the 3:54 bus.");
@@ -210,7 +208,7 @@ const DAYS={
   B("13:50","14:10","G1 Reading Club","teach"),
   B("14:10","14:25","Admin & email","work"),
   B("14:25","14:40","G2 Reading Club","teach"),
-  B("14:40","15:10","Free choice","rest","30 min: a fantasy novel, gaming YouTube and news, or A+.",1),
+  B("14:40","15:10","Korean book study","study","30 min with your book.",1),
   B("15:10","15:20","Prep tomorrow","work"),
   shut,...evening(false)]},
  tue:{name:"Tuesday",blocks:[...morning,prep,
@@ -220,7 +218,7 @@ const DAYS={
   B("10:05","10:45","Lesson prep","work"),
   B("10:50","11:30","Language Lab 4","teach"),
   B("11:30","11:55","Eat","rest"),
-  B("11:55","12:25","Break","rest","Off the clock."),
+  B("11:55","12:25","Korean book study","study","30 min with your book.",1),
   B("12:25","13:05","Language Lab 5/6","teach"),
   B("13:10","13:50","Library management","library"),
   B("13:50","14:10","G1 Reading Club","teach"),
@@ -233,7 +231,7 @@ const DAYS={
   B("10:05","10:45","Language Lab 4","teach"),
   B("10:50","11:30","Language Lab 3","teach"),
   B("11:30","11:55","Eat","rest"),
-  B("11:55","12:25","Break","rest","Off the clock."),
+  B("11:55","12:25","Korean book study","study","30 min with your book.",1),
   B("12:25","12:55","Free choice","rest","30 min: a fantasy novel, gaming YouTube and news, or A+.",1),
   B("12:55","13:05","Library check","library","Quick tidy and holds."),
   B("13:10","14:25","Enrichment","teach"),
@@ -246,7 +244,7 @@ const DAYS={
   B("09:50","10:45","Deep work","work","Library system, curriculum, or A+ if you fancy it."),
   B("10:50","11:30","Language Lab 1/2","teach"),
   B("11:30","11:55","Eat","rest"),
-  B("11:55","12:25","Break","rest","Off the clock."),
+  B("11:55","12:25","Korean book study","study","30 min with your book.",1),
   B("12:25","13:05","Language Lab 5/6","teach"),
   B("13:10","13:50","Library management","library"),
   B("13:50","14:10","Weekly student check","teach"),
@@ -275,7 +273,7 @@ const DAYS={
   B("11:15","11:45","Lunch","rest"),
   B("11:45","12:35","Enrichment","teach"),
   B("12:35","12:55","Club prep","library","Set out today's project for the Junior Librarians."),
-  B("12:55","13:25","Free choice","rest","30 min: a fantasy novel, gaming YouTube and news, or A+.",1),
+  B("12:55","13:25","Korean book study","study","30 min with your book.",1),
   B("13:25","13:35","Breather","rest"),
   B("13:35","14:15","Language Lab 1/2","teach"),
   B("14:15","14:30","G2 Reading Club","teach"),
@@ -306,8 +304,7 @@ function staffify(blocks){
     B("15:30","16:30","Staff meeting","work","Done by 4:30 at the latest."),
     B("16:30","17:35","Commute home","study","Korean audio the whole way.",1),
     B("17:35","21:00","Family time","family","Your wife does daycare pickup today. Confirm it in the morning."),
-    B("21:00","21:30","Korean book study","study","At home, at the table.",1),
-    B("21:30","23:00","Ally time","game","90 min.",1),
+    B("21:00","23:00","Ally or free time","game","Yours. No study tonight.",1),
     B("23:00","23:30","Wind down","rest")];
 }
 
